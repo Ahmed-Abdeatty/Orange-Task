@@ -21,3 +21,5 @@ To run this classification tasks you need
 
 # How to run
 Both classification tasks has a main.py file that can be ran directly. However, you may need to edit the list of tuning parameters.
+
+In order to run the Word2Vec portion of the code you need to download Glove 100 dim (can be downloaded from https://worksheets.codalab.org/bundles/0x15a09c8f74f94a20bec0b68a2e6703b3/)

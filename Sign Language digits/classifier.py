@@ -60,7 +60,7 @@ class classifier:
 
         cnn.compile(loss=keras.losses.categorical_crossentropy, optimizer=keras.optimizers.Adam(),metrics=['accuracy'])
         cnn.summary()
-        fashion_train = cnn.fit(ds.X_train, ds.Y_train, batch_size=batch_size,epochs=epochs,verbose=0,validation_data=(ds.X_valid, ds.Y_valid))
+        fashion_train = cnn.fit(ds.X_train, ds.Y_train, batch_size=batch_size,epochs=epochs,verbose=1,validation_data=(ds.X_valid, ds.Y_valid))
         train_eval = cnn.evaluate(ds.X_train, ds.Y_train, verbose=0)
         valid_eval = cnn.evaluate(ds.X_valid, ds.Y_valid, verbose=0)
         test_eval = cnn.evaluate(ds.X_test, ds.Y_test, verbose=0)

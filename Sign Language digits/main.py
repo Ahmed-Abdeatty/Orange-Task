@@ -28,11 +28,20 @@ if __name__ == '__main__':
     clas = classifier()
     # call CNN
     for l1_drop in level1_drop:
-        for l1_drop in level1_drop:
-            for l1_drop in level1_drop:
-                for l1_drop in level1_drop:
-                    for l1_drop in level1_drop:
-        pass
+        for l2_drop in level2_drop:
+            for l3_drop in level3_drop:
+                for l4_drop in level4_drop:
+                    for l5_drop in level5_drop:
+                        for b_size in batch_sizes:
+                            for epoch in epochs:
+                                drop_perc[0] = l1_drop
+                                drop_perc[1] = l2_drop
+                                drop_perc[2] = l3_drop
+                                drop_perc[3] = l4_drop
+                                drop_perc[4] = l5_drop
+                                train_eval, valid_eval,test_eval = clas.CNN(cnn_ds,batch_size=b_size,epochs=epoch
+                                    ,num_classes=num_classes,dropout=dropout,drop_perc=drop_perc)
+                                print(str(train_eval) + "  " + str(valid_eval) + "  " + str(test_eval) )
     # call the rest of classifiers
     clas.classify(ds,neighbors = neighbors,slack = slack,estimators = estimators)
     
